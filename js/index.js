@@ -71,9 +71,9 @@ const displayProducts = (productID) => {
                 </div>
                 <hr>
                 <div class = "flex justify-between mt-3 gap-1">
-                    <button class="btn btn-outline border px-3 text-primaryColor font-bold border-primaryColor border-opacity-10"><i class="fa-solid fa-thumbs-up"></i></button>
-                    <button class="btn btn-outline border px-3 text-primaryColor font-bold border-primaryColor border-opacity-10">Adopt</button>
-                    <button class="btn btn-outline border px-3 text-primaryColor font-bold border-primaryColor border-opacity-10">Details</button>
+                    <button class="btn btn-outline border px-4 text-primaryColor font-bold border-primaryColor border-opacity-10"><i class="fa-solid fa-thumbs-up"></i></button>
+                    <button class="btn btn-outline border px-4 text-primaryColor font-bold border-primaryColor border-opacity-10">Adopt</button>
+                    <button class="btn btn-outline border px-4 text-primaryColor font-bold border-primaryColor border-opacity-10">Details</button>
                 </div>
             </div>
         `
