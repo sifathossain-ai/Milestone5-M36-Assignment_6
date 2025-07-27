@@ -45,17 +45,35 @@ const displayProducts = (productID) => {
         console.log(product.image);
         const div = document.createElement('div');
         div.innerHTML = `
-            <div class="card border rounded-sm">
-                <figure class="px-2 pt-2">
+            <div class="card border rounded-sm px-2 py-2 md:px-4 md:py-4">
+                <figure class="mb-4 md:mb-6">
                     <img src=${product.image} alt="Shoes"
-                        class="rounded-sm object-cover"/>
+                        class="rounded-sm h-full w-full object-cover"/>
                 </figure>
-                <div class="card-body">
-                    <h2 class="card-title">Card Title</h2>
-                    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-                    <div class="card-actions">
-                        <button class="btn btn-primary">Buy Now</button>
+                <div class="mb-2">
+                    <h2 class ="text-lg font-bold mb-1">${product.pet_name}</h2>
+                    <div class = "flex items-center gap-1">
+                        <div><i class="fa-solid fa-list w-5 h-5"></i></div>
+                        <h3>Breed: ${product.breed}</h3>
                     </div>
+                    <div class = "flex items-center gap-1">
+                        <div><i class="fa-solid fa-cake-candles w-5 h-5"></i></div>
+                        <h3>Birth: ${product.date_of_birth}</h3>
+                    </div>
+                    <div class = "flex items-center gap-1">
+                        <div><i class="fa-solid fa-mercury w-5 h-5"></i></div>
+                        <h3>Gender: ${product.gender}</h3>
+                    </div>
+                    <div class = "flex items-center gap-1">
+                        <div><i class="fa-solid fa-dollar-sign w-5 h-5"></i></div>
+                        <h3>Breed: ${product.price}</h3>
+                    </div>
+                </div>
+                <hr>
+                <div class = "flex justify-between mt-3 gap-1">
+                    <button class="btn btn-outline border px-3 text-primaryColor font-bold border-primaryColor border-opacity-10"><i class="fa-solid fa-thumbs-up"></i></button>
+                    <button class="btn btn-outline border px-3 text-primaryColor font-bold border-primaryColor border-opacity-10">Adopt</button>
+                    <button class="btn btn-outline border px-3 text-primaryColor font-bold border-primaryColor border-opacity-10">Details</button>
                 </div>
             </div>
         `
