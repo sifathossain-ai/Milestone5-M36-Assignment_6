@@ -45,14 +45,14 @@ const displayProducts = (productID) => {
         console.log(product.image);
         const div = document.createElement('div');
         div.innerHTML = `
-            <div class="card bg-base-100 shadow-sm">
-                <figure class="px-10 pt-10">
+            <div class="card bg-base-100 border">
+                <figure class="px-2 pt-2">
                     <img
                         src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
                         alt="Shoes"
                         class="rounded-xl" />
                 </figure>
-                <div class="card-body items-center text-center">
+                <div class="card-body">
                     <h2 class="card-title">Card Title</h2>
                     <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
                     <div class="card-actions">
