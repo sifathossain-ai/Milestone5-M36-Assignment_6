@@ -6,18 +6,34 @@ const loadCategory = () => {
         .catch(error => console.log('Error is: ', error))
 };
 
+const LoadCategoryID = (id) => {
+    // alert(id);
+    // console.log(id);
+    fetch(`https://openapi.programming-hero.com/api/peddy/category/${id}`)
+    .then(res => res.json())
+    .then(data => displayProducts(data.data))
+    .catch(error => console.log("Error is: ", error))
+}
+
+/*     {
+      "id": 1,
+      "category": "Cat",
+      "category_icon": "https://i.ibb.co.com/N7dM2K1/cat.png"
+    },
+ */
+
 const displayCategory = (dataID) => {
     const categoryDiv = document.getElementById('category');
     for (const data of dataID) {
-        // console.log(data.category)
+        console.log(data.category)
 
-        const buttons = document.createElement('button');
-        buttons.innerHTML = `
-            <button class = "btn border px-6 py-5 md:px-16 md:py-7 lg:px-20 lg:py-9 font-bold">
+        const divBtn = document.createElement('div');
+        divBtn.innerHTML = `
+            <button id = "btn-${data.id}" onclick = "LoadCategoryID('${data.category}')" class = "btn border px-6 py-5 md:px-16 md:py-7 lg:px-20 lg:py-9 font-bold">
             ${data.category}
             </button>
         `
-        categoryDiv.append(buttons);
+        categoryDiv.append(divBtn);
     }
 }
 
@@ -38,11 +54,35 @@ async function loadProducts() {
 }
 
 const displayProducts = (productID) => {
-
+    // console.log(productID);
     const petProducts = document.getElementById('pet-products')
+    petProducts.innerHTML = "";
+
+    if(productID.length == 0){
+        petProducts.classList.remove('grid');
+        petProducts.innerHTML = `
+            <div class="hero bg-base-200 py-16 rounded-md">
+                 <div class="hero-content flex-col text-center">
+                    <div class = "mb-4">
+                        <img src = "images/error.webp"/>
+                        </div>
+                    <div class = "">
+                        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold">No Information Available</h1>
+                        <p class="py-6">
+                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        `;
+        return;
+    }
+    else{
+        petProducts.classList.add('grid');
+    }
 
     for (const product of productID) {
-        console.log(product.image);
+        // console.log(product.image);
         const div = document.createElement('div');
         div.innerHTML = `
             <div class="card border rounded-md px-2 py-2 md:px-4 md:py-4">
