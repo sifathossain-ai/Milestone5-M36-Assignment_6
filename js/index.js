@@ -45,10 +45,10 @@ const displayProducts = (productID) => {
         console.log(product.image);
         const div = document.createElement('div');
         div.innerHTML = `
-            <div class="card border rounded-sm px-2 py-2 md:px-4 md:py-4">
+            <div class="card border rounded-md px-2 py-2 md:px-4 md:py-4">
                 <figure class="mb-4 md:mb-6">
                     <img src=${product.image} alt="Shoes"
-                        class="rounded-sm h-full w-full object-cover"/>
+                        class="rounded-md h-full w-full object-cover"/>
                 </figure>
                 <div class="mb-2">
                     <h2 class ="text-lg font-bold mb-1">${product.pet_name}</h2>
