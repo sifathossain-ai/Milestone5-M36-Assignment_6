@@ -45,12 +45,12 @@ const displayProducts = (productID) => {
         console.log(product.image);
         const div = document.createElement('div');
         div.innerHTML = `
-            <div class="card bg-base-100 border">
+            <div class="card bg-base-100 border rounded-sm">
                 <figure class="px-2 pt-2">
                     <img
                         src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
                         alt="Shoes"
-                        class="rounded-xl" />
+                        class="rounded-sm" />
                 </figure>
                 <div class="card-body">
                     <h2 class="card-title">Card Title</h2>
