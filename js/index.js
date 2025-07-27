@@ -66,7 +66,7 @@ const displayProducts = (productID) => {
                     </div>
                     <div class = "flex items-center gap-1">
                         <div><i class="fa-solid fa-dollar-sign w-5 h-5"></i></div>
-                        <h3>Breed: ${product.price}</h3>
+                        <h3>Price: ${product.price}</h3>
                     </div>
                 </div>
                 <hr>
