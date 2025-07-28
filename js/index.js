@@ -78,7 +78,7 @@ const petDetails = (id) => {
 
 //Show Pet Details
 const showPetDetails = (getData) => {
-    console.log(getData);
+    // console.log(getData);
     const detailsContainer = document.getElementById('model-content');
     detailsContainer.innerHTML = `
         <img class="w-full md:h-[320px] object-cover rounded-md mb-6" src = ${getData.petData.image}/>
@@ -113,7 +113,7 @@ const showPetDetails = (getData) => {
 // Show Pet Image
 
 const addToLiked = (id) => {
-    console.log(id);
+    // console.log(id);
     const likeDiv = document.getElementById('blank-div');
     const img = document.createElement('img');
 
@@ -124,7 +124,7 @@ const addToLiked = (id) => {
 
 // Show Congratulations Modal 
 const showConModal = () => {
-    console.log("Congratulations!");
+    // console.log("Congratulations!");
     const clickedButton = event.target;
     document.getElementById('adopt-modal').checked = true;
 
@@ -141,7 +141,7 @@ const showConModal = () => {
             document.getElementById('adopt-modal').checked = false;
         }
     }, 1000);
-    clickedButton.disabled = true;
+    // clickedButton.disabled = true;
     clickedButton.textContent = "Adopted";
     clickedButton.classList.add('disable-btn');
     clickedButton.classList.remove("btn-success");
