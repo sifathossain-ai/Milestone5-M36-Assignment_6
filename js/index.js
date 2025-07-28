@@ -6,12 +6,27 @@ const loadCategory = () => {
         .catch(error => console.log('Error is: ', error))
 };
 
+// Remove Active Class
+
+const removeActiveClass = () => {
+    const removeClass = document.getElementsByClassName('category-btn');
+    // console.log(removeClass);
+    for (const btn of removeClass){
+        btn.classList.remove('active');
+    }
+}
+
 const LoadCategoryID = (id) => {
     // alert(id);
     // console.log(id);
     fetch(`https://openapi.programming-hero.com/api/peddy/category/${id}`)
     .then(res => res.json())
-    .then(data => displayProducts(data.data))
+    .then(data => {
+        removeActiveClass();
+        const activeBtn = document.getElementById(`btn-${id}`)
+        activeBtn.classList.add('active');
+        displayProducts(data.data)
+    })
     .catch(error => console.log("Error is: ", error))
 }
 
@@ -25,11 +40,11 @@ const LoadCategoryID = (id) => {
 const displayCategory = (dataID) => {
     const categoryDiv = document.getElementById('category');
     for (const data of dataID) {
-        console.log(data.category)
+        // console.log(data.category)
 
         const divBtn = document.createElement('div');
         divBtn.innerHTML = `
-            <button id = "btn-${data.id}" onclick = "LoadCategoryID('${data.category}')" class = "btn border px-6 py-5 md:px-16 md:py-7 lg:px-20 lg:py-9 font-bold">
+            <button id = "btn-${data.category}" onclick = "LoadCategoryID('${data.category}')" class = "btn border px-6 py-5 md:px-16 md:py-7 lg:px-20 lg:py-9 font-bold category-btn">
             ${data.category}
             </button>
         `
@@ -75,7 +90,6 @@ const displayProducts = (productID) => {
                 </div>
             </div>
         `;
-        return;
     }
     else{
         petProducts.classList.add('grid');
