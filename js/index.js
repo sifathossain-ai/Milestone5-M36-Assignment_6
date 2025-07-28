@@ -81,7 +81,7 @@ const showPetDetails = (getData) => {
     console.log(getData);
     const detailsContainer = document.getElementById('model-content');
     detailsContainer.innerHTML = `
-        <img class="w-full md:h-[250px] object-cover rounded-md mb-6" src = ${getData.petData.image}/>
+        <img class="w-full md:h-[320px] object-cover rounded-md mb-6" src = ${getData.petData.image}/>
         <div class="mb-3">
             <h2 class ="text-lg font-bold mb-1">${getData.petData.pet_name}</h2>
             <div class = "flex items-center gap-1">
