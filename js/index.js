@@ -142,7 +142,7 @@ const showConModal = () => {
         }
     }, 1000);
     clickedButton.disabled = true;
-    clickedButton.textContent = "Adopted";
+    clickedButton.textContent = "Adopt";
     clickedButton.classList.add('disable-btn');
     clickedButton.classList.remove("btn-success");
     clickedButton.classList.add("btn-disabled");
