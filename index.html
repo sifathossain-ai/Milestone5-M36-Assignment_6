@@ -117,22 +117,11 @@
                 <input class="border w-full h-full rounded-md" type="text">
             </div>
         </section>
+    </main>
 
-        <!-- Details Modal -->
-        <!-- <button id="showModalData" class="btn hidden" onclick="petModel.showModal()">open modal</button>
-        <dialog id="petModel" class="modal">
-            <div class="modal-box">
-                <div id="model-content"></div>
-            </div>
-            <form method="dialog" class="modal-backdrop">
-                <button>close</button>
-            </form>
-        </dialog>
-    </main> -->
-    <!-- You can open the modal using ID.showModal() method -->
     <button id="showModalData" class="btn hidden" onclick="petModel.showModal()">open modal</button>
-    <dialog id="petModel" class="modal">
-        <div class="modal-box w-11/12 max-w-5xl">
+    <dialog id="petModel" class="modal modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
             <div id="model-content"></div>
             <div class="modal-action">
                 <form method="dialog">
