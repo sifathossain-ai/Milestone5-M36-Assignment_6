@@ -80,6 +80,33 @@ const petDetails = (id) => {
 const showPetDetails = (getData) => {
     console.log(getData);
     const detailsContainer = document.getElementById('model-content');
+    detailsContainer.innerHTML = `
+        <img class="w-full md:h-[250px] object-cover rounded-md mb-6" src = ${getData.petData.image}/>
+        <div class="mb-3">
+            <h2 class ="text-lg font-bold mb-1">${getData.petData.pet_name}</h2>
+            <div class = "flex items-center gap-1">
+                <div><i class="fa-solid fa-list w-5 h-5"></i></div>
+                <h3>Breed: ${getData.petData.breed}</h3>
+            </div>
+            <div class = "flex items-center gap-1">
+                <div><i class="fa-solid fa-cake-candles w-5 h-5"></i></div>
+                <h3>Birth: ${getData.petData.date_of_birth}</h3>
+            </div>
+            <div class = "flex items-center gap-1">
+                <div><i class="fa-solid fa-mercury w-5 h-5"></i></div>
+                <h3>Gender: ${getData.petData.gender}</h3>
+            </div>
+            <div class = "flex items-center gap-1">
+                <div><i class="fa-solid fa-dollar-sign w-5 h-5"></i></div>
+                <h3>Price: ${getData.petData.price}</h3>
+            </div>
+        </div>
+        <hr>
+        <div class = "mt-3">
+            <h2 class = "font-bold mb-1">Details Information</h2>
+            <p>${getData.petData.pet_details}</p>
+        </div>
+    `
     document.getElementById('showModalData').click();
 }
 
