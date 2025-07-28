@@ -5,6 +5,7 @@
 }
 
 .disable-btn {
-    color: rgb(221, 221, 221) !important;
-    background-color: rgb(189, 184, 184);
+    color: rgb(110, 110, 110) !important;
+    background-color: rgb(192, 189, 189);
+    opacity: 50%;
 }
