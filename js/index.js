@@ -156,7 +156,7 @@ const displayProducts = (productID) => {
     if(productID.length == 0){
         petProducts.classList.remove('grid');
         petProducts.innerHTML = `
-            <div class="hero bg-base-200 py-16 rounded-md">
+            <div class="hero bg-base-200 py-16 rounded-md px-7">
                  <div class="hero-content flex-col text-center">
                     <div class = "mb-4">
                         <img src = "images/error.webp"/>
