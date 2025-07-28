@@ -110,6 +110,20 @@ const showPetDetails = (getData) => {
     document.getElementById('showModalData').click();
 }
 
+// Show Pet Image
+
+const addToLiked = (id) => {
+    console.log(id);
+    const likeDiv = document.getElementById('blank-div');
+    const img = document.createElement('img');
+
+    img.src = id;
+    img.className = "w-full rounded-md";
+
+    likeDiv.append(img);
+
+}
+
 const displayProducts = (productID) => {
     // console.log(productID);
     const petProducts = document.getElementById('pet-products')
@@ -167,7 +181,8 @@ const displayProducts = (productID) => {
                 </div>
                 <hr>
                 <div class = "flex justify-between mt-3 gap-2">
-                    <button class="btn btn-outline border px-4 text-primaryColor font-bold border-primaryColor border-opacity-10"><i class="fa-solid fa-thumbs-up"></i></button>
+
+                    <button onclick = "addToLiked('${product.image}')" class="btn btn-outline border px-4 text-primaryColor font-bold border-primaryColor border-opacity-10"><i class="fa-solid fa-thumbs-up"></i></button>
 
                     <button class="btn btn-outline border px-3 text-primaryColor font-bold border-primaryColor border-opacity-10">Adopt</button>
 
