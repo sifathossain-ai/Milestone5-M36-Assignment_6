@@ -142,7 +142,7 @@ const showConModal = () => {
         }
     }, 1000);
     clickedButton.disabled = true;
-    clickedButton.textContent = "Adopt";
+    clickedButton.textContent = "Adopted";
     clickedButton.classList.add('disable-btn');
     clickedButton.classList.remove("btn-success");
     clickedButton.classList.add("btn-disabled");
@@ -206,11 +206,11 @@ const displayProducts = (productID) => {
                 <hr>
                 <div class = "flex justify-between mt-3 gap-2">
 
-                    <button onclick = "addToLiked('${product.image}')" class="btn btn-outline border px-4 text-primaryColor font-bold border-primaryColor border-opacity-10"><i class="fa-solid fa-thumbs-up"></i></button>
+                    <button onclick = "addToLiked('${product.image}')" class="btn btn-outline border px-3 text-primaryColor font-bold border-primaryColor border-opacity-10"><i class="fa-solid fa-thumbs-up"></i></button>
 
-                    <button onclick = "showConModal()" class="btn btn-outline border px-3 text-primaryColor font-bold border-primaryColor border-opacity-10">Adopt</button>
+                    <button onclick = "showConModal()" class="btn btn-outline border px-2.5 text-primaryColor font-bold border-primaryColor border-opacity-10">Adopt</button>
 
-                    <button id="details-btn" onclick = "petDetails(${product.petId})" class="btn btn-outline border px-3 text-primaryColor font-bold border-primaryColor border-opacity-10">Details</button>
+                    <button id="details-btn" onclick = "petDetails(${product.petId})" class="btn btn-outline border px-2.5 text-primaryColor font-bold border-primaryColor border-opacity-10">Details</button>
                 </div>
             </div>
         `
