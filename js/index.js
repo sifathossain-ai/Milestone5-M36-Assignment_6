@@ -122,6 +122,32 @@ const addToLiked = (id) => {
     likeDiv.append(img);
 }
 
+// Show Congratulations Modal 
+const showConModal = () => {
+    console.log("Congratulations!");
+    const clickedButton = event.target;
+    document.getElementById('adopt-modal').checked = true;
+
+    let cnt = 3;
+    const cntDown = document.getElementById('countdown');
+    cntDown.textContent = cnt;
+
+    const inter = setInterval( () => {
+        cnt--;
+        cntDown.textContent = cnt;
+
+        if (cnt == 0){
+            clearInterval(inter);
+            document.getElementById('adopt-modal').checked = false;
+        }
+    }, 1000);
+    clickedButton.disabled = true;
+    clickedButton.textContent = "Adopted";
+    clickedButton.classList.add('disable-btn');
+    clickedButton.classList.remove("btn-success");
+    clickedButton.classList.add("btn-disabled");
+}
+
 const displayProducts = (productID) => {
     // console.log(productID);
     const petProducts = document.getElementById('pet-products')
@@ -182,7 +208,7 @@ const displayProducts = (productID) => {
 
                     <button onclick = "addToLiked('${product.image}')" class="btn btn-outline border px-4 text-primaryColor font-bold border-primaryColor border-opacity-10"><i class="fa-solid fa-thumbs-up"></i></button>
 
-                    <button class="btn btn-outline border px-3 text-primaryColor font-bold border-primaryColor border-opacity-10">Adopt</button>
+                    <button onclick = "showConModal()" class="btn btn-outline border px-3 text-primaryColor font-bold border-primaryColor border-opacity-10">Adopt</button>
 
                     <button id="details-btn" onclick = "petDetails(${product.petId})" class="btn btn-outline border px-3 text-primaryColor font-bold border-primaryColor border-opacity-10">Details</button>
                 </div>

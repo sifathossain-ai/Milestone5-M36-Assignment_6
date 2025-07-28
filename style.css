@@ -3,3 +3,8 @@
     border-radius: 100px;
     border-color: #0E7A81;
 }
+
+.disable-btn {
+    color: rgb(221, 221, 221) !important;
+    background-color: rgb(189, 184, 184);
+}
