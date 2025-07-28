@@ -68,6 +68,21 @@ async function loadProducts() {
     }
 }
 
+// Pet Details 
+const petDetails = (id) => {
+    fetch(`https://openapi.programming-hero.com/api/peddy/pet/${id}`)
+    .then(res => res.json())
+    .then(data => showPetDetails(data));
+    // console.log(id);
+}
+
+//Show Pet Details
+const showPetDetails = (getData) => {
+    console.log(getData);
+    const detailsContainer = document.getElementById('model-content');
+    document.getElementById('showModalData').click();
+}
+
 const displayProducts = (productID) => {
     // console.log(productID);
     const petProducts = document.getElementById('pet-products')
@@ -96,7 +111,7 @@ const displayProducts = (productID) => {
     }
 
     for (const product of productID) {
-        // console.log(product.image);
+        // console.log(product.petId);
         const div = document.createElement('div');
         div.innerHTML = `
             <div class="card border rounded-md px-2 py-2 md:px-4 md:py-4">
@@ -126,8 +141,10 @@ const displayProducts = (productID) => {
                 <hr>
                 <div class = "flex justify-between mt-3 gap-2">
                     <button class="btn btn-outline border px-4 text-primaryColor font-bold border-primaryColor border-opacity-10"><i class="fa-solid fa-thumbs-up"></i></button>
+
                     <button class="btn btn-outline border px-3 text-primaryColor font-bold border-primaryColor border-opacity-10">Adopt</button>
-                    <button class="btn btn-outline border px-3 text-primaryColor font-bold border-primaryColor border-opacity-10">Details</button>
+
+                    <button id="details-btn" onclick = "petDetails(${product.petId})" class="btn btn-outline border px-3 text-primaryColor font-bold border-primaryColor border-opacity-10">Details</button>
                 </div>
             </div>
         `
