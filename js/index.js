@@ -118,10 +118,8 @@ const addToLiked = (id) => {
     const img = document.createElement('img');
 
     img.src = id;
-    img.className = "w-full rounded-md";
-
+    img.className = "w-full object-cover rounded-md";
     likeDiv.append(img);
-
 }
 
 const displayProducts = (productID) => {
